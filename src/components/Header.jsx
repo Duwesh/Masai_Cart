@@ -1,7 +1,12 @@
 import React from "react";
 import { Container, FormControl, Navbar, NavDropdown } from "react-bootstrap";
+import { CartState } from "../context/Context";
 
 const Header = () => {
+  const {
+    state: { cart },
+  } = CartState();
+
   return (
     <Navbar bg="dark" variant="dark" style={{ height: "80px" }}>
       <Container>
