@@ -23,17 +23,17 @@ const Home = () => {
       sortedProducts = sortedProducts.filter((prod) => prod.inStock);
     }
 
-    if (!byFastDelivery) {
+    if (byFastDelivery) {
       sortedProducts = sortedProducts.filter((prod) => prod.byFastDelivery);
     }
 
-    if (!byRating) {
+    if (byRating) {
       sortedProducts = sortedProducts.filter(
         (prod) => prod.ratings >= byRating
       );
     }
 
-    if (!searchQuery) {
+    if (searchQuery) {
       sortedProducts = sortedProducts.filter((prod) =>
         prod.name.toLowerCase().includes(searchQuery)
       );
@@ -46,7 +46,7 @@ const Home = () => {
     <div className="home">
       <Filters />
       <div className="productContainer">
-        {transformProducts.map((prod) => (
+        {transformProducts().map((prod) => (
           <SingleProduct product={prod} key={prod.id} />
         ))}
       </div>
