@@ -1,5 +1,12 @@
+import { Dropdown } from "bootstrap";
 import React from "react";
-import { Container, FormControl, Navbar, NavDropdown } from "react-bootstrap";
+import {
+  Container,
+  FormControl,
+  Nav,
+  Navbar,
+  NavDropdown,
+} from "react-bootstrap";
 import { CartState } from "../context/Context";
 
 const Header = () => {
@@ -26,10 +33,6 @@ const Header = () => {
             }}
           />
         </Navbar.Text>
-        <NavDropdown title="Cart" id="nav-dropdown">
-          <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
-          <NavDropdown.Item eventKey="4.2">Another action</NavDropdown.Item>
-        </NavDropdown>
       </Container>
     </Navbar>
   );
