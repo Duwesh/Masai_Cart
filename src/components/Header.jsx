@@ -5,6 +5,8 @@ import { CartState } from "../context/Context";
 const Header = () => {
   const {
     state: { cart },
+    dispatch,
+    productDispatch,
   } = CartState();
 
   return (
@@ -16,16 +18,17 @@ const Header = () => {
             style={{ width: 500 }}
             placeholder="Search a product..."
             className="m-auto"
+            onChange={(e) => {
+              productDispatch({
+                type: "FILTER_BY_SEARCH",
+                payload: e.target.value,
+              });
+            }}
           />
         </Navbar.Text>
         <NavDropdown title="Cart" id="nav-dropdown">
           <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
           <NavDropdown.Item eventKey="4.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item eventKey="4.3">
-            Something else here
-          </NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item eventKey="4.4">Separated link</NavDropdown.Item>
         </NavDropdown>
       </Container>
     </Navbar>
