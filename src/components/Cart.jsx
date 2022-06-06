@@ -3,6 +3,7 @@ import { CartState } from "../context/Context";
 import { Col, Form, Image, ListGroup, Row } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { AiFillDelete } from "react-icons/ai";
+import Rating from './Rating';
 
 const Cart = () => {
   const {
@@ -15,7 +16,7 @@ const Cart = () => {
     setTotal(
       cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
     );
-  });
+  }, [cart]);
 
   return (
     <div className="home">
@@ -34,7 +35,7 @@ const Cart = () => {
                   <span>{prod.price}</span>
                 </Col>
                 <Col md={2}>
-                  <span>{prod.ratings}</span>
+                  <Rating rating={prod.ratings}/>
                 </Col>
                 <Col>
                   <Form.Control
@@ -60,7 +61,7 @@ const Cart = () => {
                     type="button"
                     variant="light"
                     onClick={() => {
-                      dispatch({ type: "REMOVE_FROM_CART", payload: prod });
+                      dispatch({ type: "REMOVE_FROM__CART", payload: prod });
                     }}
                   >
                     <AiFillDelete fontSize="20px" />

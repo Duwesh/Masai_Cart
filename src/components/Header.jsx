@@ -71,7 +71,7 @@ const Header = () => {
                         style={{ cursor: "pointer" }}
                         onClick={() => {
                           dispatch({
-                            type: "REMOVE_FROM_CART",
+                            type: "REMOVE_FROM__CART",
                             payload: prod,
                           });
                         }}
