@@ -22,7 +22,11 @@ const Header = () => {
   return (
     <Navbar bg="dark" variant="dark" style={{ height: "80px" }}>
       <Container>
-        <Navbar.Brand>MASAI CART</Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+            MASAI CART
+          </Link>
+        </Navbar.Brand>
         <Navbar.Text className="search">
           <FormControl
             style={{ width: 500 }}
