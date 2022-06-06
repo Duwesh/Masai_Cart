@@ -9,7 +9,6 @@ const Cart = () => {
     state: { cart },
     dispatch,
   } = CartState();
-
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -56,7 +55,7 @@ const Cart = () => {
                     ))}
                   </Form.Control>
                 </Col>
-                <Col>
+                <Col md={2}>
                   <Button
                     type="button"
                     variant="light"

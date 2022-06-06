@@ -35,7 +35,7 @@ const Filters = () => {
           onChange={() =>
             productDispatch({ type: "SORT_BY_PRICE", payload: "highToLow" })
           }
-          checked={sort === "lowToHigh" ? true : false}
+          checked={sort === "highToLow" ? true : false}
         />
       </span>
       <span>
