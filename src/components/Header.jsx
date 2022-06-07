@@ -41,7 +41,7 @@ const Header = () => {
           />
         </Navbar.Text>
         <Nav>
-          <Dropdown style={{ position: "relative" }}>
+          <Dropdown>
             <Dropdown.Toggle variant="success">
               <FaShoppingCart color="white" fontSize="25px" />
               <Badge>{cart.length}</Badge>
@@ -50,7 +50,8 @@ const Header = () => {
               style={{
                 minWidth: "370px",
                 position: "absolute",
-                right: "100px",
+                left: "-200px",
+                top: "50px"
               }}
             >
               {cart.length > 0 ? (
